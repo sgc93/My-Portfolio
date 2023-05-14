@@ -32,6 +32,43 @@ section {
   padding: 10rem 9% 2rem;
 }
 
+.eclipse1 {
+  position: absolute;
+  width: 60rem;
+  height: 60rem;
+  left: -365px;
+  top: -169.06px;
+
+  background: linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #ff29c3 100%);
+  opacity: 0.8;
+  filter: blur(100px);
+  transform: rotate(-17.38deg);
+}
+
+.eclipse2 {
+  position: absolute;
+  width: 20rem;
+  height: 60rem;
+  left: 90rem;
+  top: 65rem;
+
+  background: linear-gradient(to left, rgba(0, 194, 255, 0) 0%, #ff29c3 100%);
+  opacity: 0.6;
+  filter: blur(10rem);
+  transform: rotate(-17.38deg);
+}
+
+.eclipse3 {
+  position: absolute;
+  left: 82.6%;
+  right: -0.59%;
+  top: 11.03%;
+  bottom: 85.37%;
+
+  background: url("img/stpg.png");
+  transform: rotate(-14.28deg);
+}
+
 .header {
   position: fixed;
   background: var(--bg-color);
@@ -50,26 +87,6 @@ section {
 .header.sticky {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
 }
-/* 
-.header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.header:hover::before {
-  left: 100%;
-} */
 
 .logo {
   text-decoration: none;
@@ -89,10 +106,8 @@ section {
 
 .navbar a {
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-left: 4rem;
-  transition: 0.2s;
-  display: inline-block;
 }
 
 .navbar a:hover,
@@ -100,17 +115,15 @@ section {
   color: var(--main-color);
 }
 
-.navbar a.active {
+/* .navbar a.active {
   display: inline-block;
-  box-shadow: 0 0.2rem 0.3rem var(--main-color);
+  box-shadow: 0 0.2rem 3rem var(--sec-bg-color);
   transform: rotate(6deg) scale(1.2);
-  background: #1f242d;
-}
+  background: var(--bg-color);
+} */
 
-#menu-icon,
-.x-icon {
+#menu-icon {
   font-size: 3.6rem;
-  color: var(--text-color);
   display: none;
 }
 
@@ -118,27 +131,24 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+    106.51deg,
+    rgba(255, 255, 255, 0.05) 3.44%,
+    rgba(255, 255, 255, 0.02) 64.82%
+  );
+  backdrop-filter: blur(1.6rem);
+  /* Note: backdrop-filter has minimal browser support */
+  border: 0.2rem solid white;
+  margin: 20rem 10rem;
+  border-radius: 24px;
 }
 
 .home-img img {
   width: 35vw;
-  animation: floatImage 4s ease-in-out infinite;
-}
-
-@keyframes floatImage {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-2.4rem);
-  }
-  10% {
-    transform: translateY(0);
-  }
 }
 
 .home-content h3 {
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
@@ -151,7 +161,7 @@ section {
 }
 
 .home-content h1 {
-  font-size: 5.6rem;
+  font-size: 3.6rem;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -202,6 +212,10 @@ section {
   box-shadow: none;
 }
 
+span {
+  color: var(--main-color);
+}
+
 .about {
   display: flex;
   justify-content: center;
@@ -212,14 +226,38 @@ section {
 
 .about-img img {
   width: 35vw;
+  border-bottom: 0.2rem solid var(--main-color);
+  border-radius: 40%;
+  box-shadow: 0 1rem 1rem var(--main-color);
+  animation: floatImage 4s ease-in-out infinite;
 }
 
+.name {
+  background-color: var(--sec-bg-color);
+  box-shadow: 0 0 0.2rem var(--main-color);
+  font-weight: 900;
+  display: inline-block;
+  animation: floatImage 4s ease infinite;
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.2rem);
+  }
+  10% {
+    transform: translateY(0);
+  }
+}
 .heading {
   text-align: center;
   font-size: 5rem;
 }
 
 .about-content h2 {
+  margin-bottom: 3rem;
   text-align: left;
   line-height: 1.2;
 }
@@ -235,6 +273,7 @@ section {
 .about-content p {
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
+  font-family: monospace;
 }
 
 .services h2 {
@@ -489,18 +528,23 @@ section {
 @media (max-width: 768px) {
   #menu-icon {
     display: block;
+    font-size: 3.2rem;
   }
 
   .navbar {
     position: absolute;
+    display: none;
     top: 100%;
     left: 0;
     width: 100%;
+    height: calc(50vh - 7.36rem);
     padding: 1rem 3%;
-    background: var(--bg-color);
+
+    background-color: var(--bg-color);
+
+    /* backdrop-filter: blur(40rem); */
     border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    display: none;
   }
 
   .navbar.active {
@@ -509,12 +553,20 @@ section {
 
   .navbar a {
     display: block;
+    text-align: center;
     font-size: 2rem;
     margin: 3rem;
   }
+
   .home {
     flex-direction: column;
+    border: none;
+    margin: auto;
   }
+
+  .eclipse1 {
+  }
+
   .home-content h3 {
     font-size: 2.6rem;
   }
