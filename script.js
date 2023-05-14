@@ -1,12 +1,27 @@
+let hamMenuIcon = document.getElementById("menu-icon");
+let navBar = document.getElementById("navbar");
+let navLink = navBar.querySelectorAll("a");
+
+hamMenuIcon.addEventListener("click", () => {
+  navBar.classList.toggle("active");
+  hamMenuIcon.classList.toggle("bx-x");
+});
+navLink.forEach((navLinks) => {
+  navLinks.addEventListener("click", () => {
+    navBar.classList.remove("active");
+    hamMenuIcon.classList.toggle("bx-x");
+  });
+});
+
 // handle toggel icon navbar
 
-let menuIcon = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+// let menuIcon = document.querySelector("#menu-icon");
+// let navbar = document.querySelector(".navbar");
 
-menuIcon.onclick = () => {
-  menuIcon.classList.toggle("x-icon");
-  navbar.classList.toggle("active");
-};
+// menuIcon.onclick = () => {
+//   menuIcon.classList.toggle("bx-x");
+//   navbar.classList.toggle("active");
+// };
 
 // handle scroll section's active link
 
@@ -34,7 +49,7 @@ window.onscroll = () => {
   header.classList.toggle("sticky", window.scrollY > 100);
 
   // remove toggle icon and navbar when click navbar link
-  menuIcon.classList.toggle("x-icon");
+  menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
 
