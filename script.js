@@ -1,3 +1,13 @@
+// handle toggel icon navbar
+
+let menuIcon = document.querySelector("#menu-icon");
+let navbar = document.querySelector(".navbar");
+
+menuIcon.onclick = () => {
+  menuIcon.classList.toggle("x-icon");
+  navbar.classList.toggle("active");
+};
+
 // handle scroll section's active link
 
 let sections = document.querySelectorAll("section");
