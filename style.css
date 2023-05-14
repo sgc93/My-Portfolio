@@ -18,7 +18,7 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body {
@@ -102,8 +102,9 @@ section {
 
 .navbar a.active {
   display: inline-block;
-  border-bottom: 0.1rem solid var(--main-color);
+  box-shadow: 0 0.2rem 0.3rem var(--main-color);
   transform: rotate(6deg) scale(1.2);
+  background: #1f242d;
 }
 
 #menu-icon,
@@ -454,6 +455,15 @@ section {
   section {
     padding: 10rem 3% 2rem;
   }
+  .services {
+    padding-bottom: 7rem;
+  }
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+  .contact {
+    min-height: auto;
+  }
   .footer {
     padding: 2rem 3%;
   }
@@ -484,5 +494,67 @@ section {
     display: block;
     font-size: 2rem;
     margin: 3rem;
+  }
+  .home {
+    flex-direction: column;
+  }
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .about img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+
+  .services h2 {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+  .portfolio-containoer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 617px) {
+  .portfolio-containoer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .contact form .input-box input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .home-img img {
+    width: 90vw;
+  }
+  .about-img img {
+    width: 90vw;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
   }
 }
